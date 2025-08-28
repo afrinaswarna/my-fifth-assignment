@@ -41,8 +41,8 @@ for (let callButton of callButtons) {
         <div class="bg-[#FAFAFA] p-2  rounded-lg my-2">
             <div class="flex justify-between items-center ">
               <div>
-                <h2 class="font-bold text-sm font-inter">${serviceName}</h2>
-                <p class="text-sm text-[#5c5c5c] font-madurai">${serviceNumber}</p>
+                <h2 class="font-semibold xl:font-bold 2xl:font-bold text-lg xl:text-sm 2xl:text-lg font-inter">${serviceName}</h2>
+                <p class="text-lg  xl:text-sm 2xl:text-lg text-[#5c5c5c] font-madurai">${serviceNumber}</p>
               </div>
               <p class="text-[#111111FF] font-madurai">${date}</p>
             </div>
