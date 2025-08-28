@@ -324,7 +324,7 @@
               
               <div class="w-1/2">
                 <button
-                class="text-white bg-[#00A63E] font-roboto rounded-lg w-full  py-2">
+                class="call-button text-white bg-[#00A63E] font-roboto rounded-lg w-full  py-2">
                 <i class="fa-solid fa-phone"></i>
                 call
               </button>
@@ -406,28 +406,23 @@
               </div>
         
           </div>
-          
-          
-         
-         
-          
-          
-          
-          
         </div>
 
-        <div class="w-full lg:w-1/4 bg-white rounded-xl shadow-lg p-6">
+        <div  class=" w-full lg:w-1/4 bg-white rounded-xl shadow-lg p-4">
           <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
               <i class="fa-regular fa-clock"></i>
               <h2 class="text-xl font-medium">Call History</h2>
             </div>
-            <button
-              class="bg-[#00A63E] w-16 p-2 rounded-[50px] text-white font-semibold"
-            >
+            <button id="clear-button"
+              class="bg-[#00A63E] w-16 p-2 rounded-[50px] text-white font-semibold">
               Clear
             </button>
           </div>
+          <div id="call-history-container">
+            
+          </div>
+          
         </div>
       </section>
     </main>
