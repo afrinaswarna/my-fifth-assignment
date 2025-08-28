@@ -67,3 +67,19 @@ document.getElementById('clear-button')
     callHistory.style.display='none'
     callHistory.innerHTML=''
 })
+    
+
+// functionalities for copy button
+
+let copyButtons  = document.getElementsByClassName('copy-button')
+for(let copyButton of copyButtons){
+  copyButton.addEventListener('click',function(){
+    let textElement = copyButton.parentNode.parentNode.parentNode.childNodes[7].innerText
+    navigator.clipboard.writeText(textElement)
+    alert(`Number is copied: ${textElement}`)
+    let  copyCount = getElement('copy-count')
+    copyCountIncrease = copyCount + 1
+    document.getElementById('copy-count').innerText = copyCountIncrease
+
+  })
+}
