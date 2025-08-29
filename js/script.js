@@ -9,15 +9,53 @@ function getElement(id) {
 // functionalities for heart button
 
 let heartButtons = document.getElementsByClassName("heart-button");
-
+  
 for (let heartButton of heartButtons) {
   heartButton.addEventListener("click", function () {
+    heartButton.style.color ='red'
     let heartCount = getElement("heart-count");
-    console.log(heartCount);
     heartCountIncrease = heartCount + 1;
     document.getElementById("heart-count").innerText = heartCountIncrease;
+     
   });
 }
+
+
+// functionalities for date
+
+function showTime(){
+  let now = new Date();
+
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let period = 'AM';
+
+  if(hours >= 12){
+    period = 'PM';
+  }
+  if(hours > 12){
+    hours = hours - 12;
+  }
+  if(hours === 0){
+    hours = 12;
+  }
+
+
+  if(minutes < 10){
+    minutes = '0'+ minutes;
+  }
+  if(seconds < 10){
+    seconds = '0'+seconds
+  }
+
+  let time = hours + ':' + minutes + ':' + seconds + " "+ period
+
+  return time
+
+}
+
+
 
 // functionalities for call button
 
@@ -29,7 +67,7 @@ for (let callButton of callButtons) {
         callButton.parentNode.parentNode.parentNode.childNodes[3].innerText
      let serviceNumber =
         callButton.parentNode.parentNode.parentNode.childNodes[7].innerText;
-     let date = new Date().toLocaleDateString();
+     let date = showTime()
      if (coinCount >= 20) {
          coinCountReduce = coinCount - 20;
          document.getElementById("coin-count").innerText = coinCountReduce;
@@ -40,11 +78,11 @@ for (let callButton of callButtons) {
          div.innerHTML=`
         <div class="bg-[#FAFAFA] p-2  rounded-lg my-2">
             <div class="flex justify-between items-center ">
-              <div>
+              <div class="w-2/3">
                 <h2 class="font-semibold xl:font-bold 2xl:font-bold text-lg xl:text-sm 2xl:text-lg font-inter">${serviceName}</h2>
                 <p class="text-lg  xl:text-sm 2xl:text-lg text-[#5c5c5c] font-madurai">${serviceNumber}</p>
               </div>
-              <p class="text-[#111111FF] font-madurai">${date}</p>
+              <p  class="text-[#111111FF] w-1/3 font-madurai">${date}</p>
             </div>
         </div>`;
      callHistoryContainer.append(div);
